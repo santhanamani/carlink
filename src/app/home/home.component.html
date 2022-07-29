@@ -1,0 +1,199 @@
+
+<!------------------------------------------------------- Alice - Header - Landscape------------------------------------------------------->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon name="mic-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="cellular-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-datetime [value]="dateTime" displayFormat="MMM DD, YYYY HH:mm" ></ion-datetime>
+      </ion-button>
+      <ion-button>
+        <ion-text> 23 Deg C</ion-text>
+      </ion-button>
+      <ion-button> 
+        <ion-icon name="cloudy-outline"></ion-icon> 
+      </ion-button>
+      |
+    </ion-buttons>
+    <ion-title>Alice - Urban</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!------------------------------------------------------- Alice - Content - Landscape------------------------------------------------------->
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-grid style="padding-top: 3%;">
+      <ion-row>
+        <!----------------------------------------------- Alice - Content - Landscape - Column 1 ------------------------------------------------------->
+        <ion-col size="6">
+          <!--------------------------------------------- Alice - Content - Landscape - Col 1 - Item 1------------------------------------------------------->
+          <ion-card class="transparent-card">
+            <ion-toolbar>
+              <ion-buttons slot="secondary">
+                <ion-button>
+                  <ion-text class="ion-text-capitalize"> 12.797 N</ion-text>
+                </ion-button>
+                <ion-button>
+                  <ion-text class="ion-text-capitalize"> 32.778 E</ion-text>
+                </ion-button>
+              </ion-buttons>
+              <ion-title class="ion-text-left">Navigation</ion-title>
+            </ion-toolbar>
+            <div #mapElement id="gmap" style="height:300px;"></div>
+            <!-- <img style= "padding: 5%;" src="assets/imgs/map.jpeg"> -->
+          </ion-card>
+          <!--------------------------------------------- Alice - Content - Landscape - Col 1 - Item 2------------------------------------------------------->
+          <ion-card class="ion-padding">
+            <ion-toolbar>
+              <ion-buttons slot="secondary">
+                <ion-button>
+                  <ion-text class="ion-text-capitalize"> 23 Deg C</ion-text>
+                </ion-button>
+                <ion-button>
+                  <ion-text class="ion-text-capitalize"> 35 PPM (Pure)</ion-text>
+                </ion-button>
+              </ion-buttons>
+              <ion-title class="ion-text-left">Cabin climate</ion-title>
+            </ion-toolbar>
+            <ion-row>
+              <ion-col>
+                <ion-button size="large" expand="block" disabled="true" color="primary"> 
+                  <ion-icon style="font-size: 24px; margin-top: 5%;" name="sync-outline"></ion-icon>
+                  <h3 style="margin-left: 3%;"class="ion-text-capitalize" > Auto</h3>
+                 </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button size="large" expand="block" disabled="false" color="tertiary"> 
+                  <ion-icon style="font-size: 24px; margin-top: 5%;" name="snow-outline"></ion-icon>
+                  <h3 style="margin-left: 3%;" class="ion-text-capitalize"> Freeze</h3>
+                 </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button size="large" expand="block" disabled="true" color="secondary"> 
+                  <ion-icon style="font-size: 24px; margin-top: 5%;" name="thermometer-outline"></ion-icon>
+                  <h3 style="margin-left: 3%;" class="ion-text-capitalize"> Cool</h3>
+                 </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button size="large" expand="block" disabled="true" color="warning"> 
+                  <ion-icon style="font-size: 24px; margin-top: 5%;" name="sunny-outline"></ion-icon>
+                  <h3 style="margin-left: 3%;"class="ion-text-capitalize" > Warm</h3>
+                 </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+
+        <!----------------------------------------------- Alice - Content - Landscape - Column 2 ------------------------------------------------------->
+        <ion-col size="4">
+          <!--------------------------------------------- Alice - Content - Landscape - Col 2 - Item 1------------------------------------------------------->
+          <ion-card class="ion-padding">
+            <ion-toolbar>
+              <ion-buttons slot="secondary">
+                <ion-button>
+                  <ion-text class="ion-text-capitalize"> Discharge mode</ion-text>
+                </ion-button>
+              </ion-buttons>
+              <ion-title class="ion-text-left">Battery status</ion-title>
+            </ion-toolbar>
+            <ion-row>
+              <ion-col>
+                <div>
+                  <ion-item>
+                    <ion-thumbnail >
+                      <ion-icon style="font-size: 50px; margin-top: 8%;" color="secondary" name="battery-full-outline"></ion-icon>
+                    </ion-thumbnail>
+                    <ion-label style="font-weight: 300;font-size: 30px; margin-left: 5%;" > 100% </ion-label>
+                    <h3 style="font-weight: 300;font-size: 20px; margin-left: 10%;"> Estimaed Range: 149 Km </h3>
+                  </ion-item>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+          <!--------------------------------------------- Alice - Content - Landscape - Col 2 - Item 2------------------------------------------------------->
+          <ion-card class="ion-padding">
+            <ion-toolbar>
+              <ion-buttons slot="secondary">
+                <ion-button>
+                  <ion-text class="ion-text-capitalize"> Drive mode</ion-text>
+                </ion-button>
+              </ion-buttons>
+              <ion-title class="ion-text-left">Drive options</ion-title>
+            </ion-toolbar>
+            <ion-row>
+              <ion-col>
+                <div  style="padding-top: 10%; padding-bottom: 5%;">
+                  <h3 style="font-weight: 500;font-size: 50px; line-height: 150%;" class="ion-text-center"> 23 km/h </h3>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-button size="large" expand="block" disabled="true"> P </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button size="large" expand="block" disabled="false"> D </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button size="large" expand="block" disabled="true"> R </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button size="large" expand="block" disabled="true"> C </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+
+        <!----------------------------------------------- Alice - Content - Landscape - Column 3 ------------------------------------------------------->
+        <ion-col size="2">
+          <!--------------------------------------------- Alice - Content - Landscape - Col 2 - Item 2------------------------------------------------------->
+          <ion-card class="ion-padding">
+
+            <ion-card class="ion-padding" color="primary">
+              <ion-icon style="font-weight: 200;font-size: 36px;" class="ion-text-center" name="home-outline"></ion-icon>
+              <h3 style="font-weight: 400;font-size: 18px;" class="ion-text-center"> Home </h3>
+            </ion-card>
+            <ion-card class="ion-padding" >
+              <ion-icon style="font-weight: 200;font-size: 36px;" class="ion-text-center" name="car-outline"></ion-icon>
+              <h3 style="font-weight: 400;font-size: 18px;" class="ion-text-center"> Vehicle </h3>
+            </ion-card>
+            <ion-card class="ion-padding" >
+              <ion-icon style="font-weight: 200;font-size: 36px;" class="ion-text-center" name="settings-outline"></ion-icon>
+              <h3 style="font-weight: 400;font-size: 18px;" class="ion-text-center"> Settings </h3>
+            </ion-card>
+            <ion-card class="ion-padding" >
+              <ion-icon style="font-weight: 200;font-size: 36px;" class="ion-text-center" name="person-outline"></ion-icon>
+              <h3 style="font-weight: 400;font-size: 18px;" class="ion-text-center"> User </h3>
+            </ion-card>
+          </ion-card>          
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+   </div>
+
+
+</ion-content>
+
+<!------------------------------------------------------- Alice - Footer - Landscape------------------------------------------------------->
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-footer>
